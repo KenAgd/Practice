@@ -1,0 +1,94 @@
+About: 
+	-This project is a terminal bank management system with the primary focus of learning AVL trees and merge sort. This is strictly just a back end account management system and isn't mean to be a client user friendly program. This would be for example only be used by a system admin. This project CAN be expanded to include a front end part with a login.
+
+
+
+Development: 
+	-Used softwares:
+		-Vim
+		-Linux text editor
+		-GCC
+		-Valgrind
+		-Clang
+		-GDB
+
+
+
+
+Build and Usage: (what terminal commands to use)
+	-Use the included MAKEFILE to compile and link all files. To compile:
+		-"make" for GCC
+		-"make CC=clang" for Clang. Used for a more clear understanding of an error and where its at.
+		-"make valgrind" to use valgrind. Runs the commands
+			--leak-check=yes
+			--track-origins=yes
+			--verbose
+			--error-errorcode=1
+
+
+	-Clang was briefly used to better understand compiler errors but gcc is the primary compiler.
+ 	-GDB was used to track seg fault with merge sort functions. To use:
+ 	 	-Include -g as a compile flag when using gdb
+ 	 	-If compiled without errors, type "gdb ./bank"
+ 	 	-Type "r" or "run" to begin
+ 	 	-To pipe in file input, type r < file_name_with_input.
+
+ 	 	
+		
+Notes:
+	-System and tree and account and node are interchangably used in the comments
+
+	-ChatGPT was used to create a roadmap for me to follow as I learn how to make an avl tree and implement it in the context of this project, as well as, to debug certain things that was taking waaaayyyy too long to figure out.
+
+
+	-AVL tree was used for efficient O(logn) insertion and deletion and self balancing.
+
+
+	-Function data types:
+		-Account: ONLY used to gather information for an
+			account thats not in the tree YET
+		-void: Doesn't have to return anything and performs
+			actions all within the function
+		-AVLNode*: ONLY used when the tree needs to be
+			altered, such as insertion, deletion,
+			or rotation
+
+  	-In the merge sort functions, I couldn't use the same printing function thats in the avl management functions because the avl functions relies on having an access pointer to the tree root. Merge sort works best with arrays and linked lists but I went with arrays for the following reasons:
+		-Array of pointers of contiguous (each array is allocated side by side), where as in a linked list each node can potentially be scatter allocated in the heap. This leads to better cache memory efficiency
+  		-Linked lists use SLIGHTLY more memory due to both storing the data of the node and a pointer to the next or prev node (better memory overhead).
+		-Access calls are O(1) for array pointers since you can use direct indexing where as linked list is O(n) since you have to traverse the list till you find the right node.
+
+	
+	
+	
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+			
+
+	
+	
+	
