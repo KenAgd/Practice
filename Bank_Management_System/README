@@ -1,5 +1,6 @@
 About: 
-	-This project is a terminal bank management system with the primary focus of learning AVL trees and merge sort. This is strictly just a back end account management system and isn't meant to be a client user friendly program. This would be for example only be used by a system admin. This project CAN be expanded to include a front end part with a login.
+	-This project is a terminal bank management system with the primary focus of learning AVL trees and merge sort. This is strictly just a back end account management system and isn't meant 
+		to be a client user friendly program. This would be for example only be used by a system admin. 
 
 
 
@@ -46,12 +47,12 @@ Notes:
 
 	-Function data types:
 		-Account: ONLY used to gather information for an
-			account thats not in the tree YET
+				account thats not in the tree YET.
 		-void: Doesn't have to return anything and performs
-			actions all within the function
+				actions all within the function.
 		-AVLNode*: ONLY used when the tree needs to be
-			altered, such as insertion, deletion,
-			or rotation
+				altered, such as insertion, deletion,
+				or rotation.
 
   	-In the merge sort functions, I couldn't use the same printing function thats in the avl management functions because the avl functions relies on having an access pointer to the tree root. Merge sort works best with arrays and linked lists but I went with arrays for the following reasons:
 		-Array of pointers of contiguous (each array is allocated side by side), where as in a linked list each node can potentially be scatter allocated in the heap. This leads to better cache memory efficiency
@@ -59,8 +60,16 @@ Notes:
 		-Access calls are O(1) for array pointers since you can use direct indexing where as linked list is O(n) since you have to traverse the list till you find the right node.
 
 	
-	
-	
+Future Improvements:
+	-This project CAN be expanded to include a front end part with a login page so that there's a client and admin side. If an admin logs in, they have full access of the program. If a client
+	logs in, they can only make transactions to their own account. This type of change would require the following:
+		-Adding a username, password, and account status (client or admin) member to Account struct in avl.h.
+		-On account creation, include username and password user input.
+		-Adding username and password to the ClientDataBase.csv for import and export.
+		-Adding guard clause to ensure that logged in clients don't have access to anyone else's account information or account in general.
+		-Create two new functions in main.c for admin and client login. In main function, have user login. Look for the account, if found and status of account is admin, call admin 
+			function, which will house the new menu while loop. If found and status of account is client, call client function which will have a limited version of admin menu.
+			
   
   
   
